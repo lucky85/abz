@@ -6,16 +6,12 @@ import "../style/center.styl";
 let $ = require ("jquery");
 
 function resize_search() {
-    let width_user_name, width_search, width_body, width_logo;
-    width_logo = $("#logo").width();
-    width_user_name = $(".header_info").width();
-    width_body = $("body").width();
-    width_search = $(".header_search");
-    width_search.width(width_body - width_user_name - width_logo - 118);
+    $(".header_search").width($("body").width() - $(".header_info").width() - $("#logo").width() - 118);
 }
 
 resize_search();
 window.addEventListener("resize", resize_search);
+
 
 try {
     let xhr = new XMLHttpRequest();
